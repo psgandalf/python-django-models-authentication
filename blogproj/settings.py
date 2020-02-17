@@ -30,9 +30,9 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-# SILENCED_SYSTEM_CHECKS should be set to an empty list once the 
+# SILENCED_SYSTEM_CHECKS should be set to an empty list once the
 # custom user model is setup. This is only added to support testing.
-SILENCED_SYSTEM_CHECKS = ['fields.E304'] 
+SILENCED_SYSTEM_CHECKS = ['fields.E304']
 
 # Application definition
 
@@ -45,6 +45,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'crispy_forms',
     'mainapp',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -131,3 +132,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+LOGIN_URL = 'login'
+LOGIN_REDIRECT_URL = 'index'
+AUTH_USER_MODEL = 'users.User'
